@@ -15,6 +15,11 @@ import { songs } from './assets/songs'
 import Herocard from './components/Herocard'
 
 function App() {
+  function clickHandler(e){
+    console.log('Button clicked');
+   
+    
+  }
   return (
     <div className='App'>
       <Box
@@ -31,7 +36,7 @@ function App() {
               p: 2,
               
               color: '#333333',
-              width: '50%',
+              width: '70%',
               marginLeft: '32',
               fontWeight: '700',
               fontSize: '32px',
@@ -83,51 +88,51 @@ function App() {
         >
           <Box
             component='section'
-            sx={{ p: 2, width: '20%' }}
+            sx={{ p: 2, width: '30%' }}
           >
             <Typography>Track-List</Typography>
           </Box>
-          <Box
+          {/* <Box
             component='section'
             sx={{ p: 2, width: '20%' }}
           >
             <Typography>icons</Typography>
-          </Box>
+          </Box> */}
           <Box
             component='section'
             sx={{ p: 2, border: '1px solid grey', width: '95%' }}
           >
             <Box
               component='section'
-              sx={{ border: '1px solid grey', width: '30%' }}
+              sx={{ border: '1px solid grey', width: '40%' }}
             >
-              <Typography>Playing-next</Typography>
+              <Typography >Playing-next</Typography>
             </Box>
             <Box
               component='section'
-              sx={{ border: '1px solid grey', width: '100%' }}
+              sx={{  width: '100%' }}
             >
               {songs.map((song) => {
                 return (
-                  <Box display={'flex'}>
+                  <Box onClick={clickHandler} component='section'sx={{display:'flex',border:'1px solid grey',marginTop:'2px' }}>
                     <Box
                       component='section'
-                      sx={{ border: '1px solid grey', width: '9%' }}
+                      sx={{ paddingTop:2, width: '9%' }}
                     >
                       <FormatAlignCenterIcon></FormatAlignCenterIcon>
                     </Box>
                     <Box
                       component='section'
-                      sx={{ border: '1px solid grey', width: '10%' }}
+                      sx={{ width: '15%',marginLeft:'3px',marginTop:'2px',marginBottom:'2px' }}
                     >
                       <img className='side-image' src={song.artwork}></img>
                     </Box>
                     <Box
                       component='section'
-                      sx={{ border: '1px solid grey', width: '90%' }}
+                      sx={{ width: '90%',paddingLeft:'3px' }}
                     >
-                      <Typography>{song.title}</Typography>
-                      <Typography>{song.artist}</Typography>
+                      <Typography align='start'>{song.title}</Typography>
+                      <Typography align='start'>{song.artist}</Typography>
 
                     </Box>
                   </Box>
